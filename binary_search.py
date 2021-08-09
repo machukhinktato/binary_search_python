@@ -1,0 +1,23 @@
+def binary_search(list, item):
+    low = 0
+    high = len(list) - 1
+    count = 0
+
+    while low <= high:
+        mid = int((low + high) / 2)
+        count+=1
+        guess = list[mid]
+        if guess == item:
+            print(count)
+            return mid
+        if guess > item:
+            high = mid - 1
+        else:
+            low = mid + 1
+    return None
+
+
+if __name__ == '__main__':
+    mList = [i + 1 for i in range(128)]
+    print(binary_search(mList, 96))
+
